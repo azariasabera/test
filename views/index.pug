@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        title Recipe App
+    body
+        h1 Recipes
+        each r in recipe
+          div
+              h2 #{r.name}
+              h3 Instructions
+              ul
+                  each instruction in r.instructions
+                      li= instruction
+              h3 Ingredients
+              ul
+                  each ingredient in r.ingredients
+                      li= ingredient
