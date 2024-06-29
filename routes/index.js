@@ -5,8 +5,7 @@ var router = express.Router();
 router.get('/', (req, res) => {
   // For demonstration purposes, fetch the "pizza" recipe
   // You can modify this to fetch any recipe dynamically
-  //res.render('index', { recipe: recipes });
-  res.render('index', { title: 'Express' });
+  res.render('index', { recipe: recipes });
 });
 
 module.exports = router;
@@ -45,9 +44,9 @@ const recipes = {
 
 // Define GET route for /recipe/:food
 router.get('/recipe/:food', (req, res) => {
-  const food = req.params.food;
+  const food = req.params.food.toLowerCase();
   if (recipes[food]) {
-    res.render('index', { recipe: recipes[food] });
+      res.json(recipes[food]);
   } else {
       res.status(404).send('Recipe not found');
   }
