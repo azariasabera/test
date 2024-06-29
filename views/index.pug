@@ -3,8 +3,19 @@ html
     head
         title Recipe App
     body
+    if (recipe)
         h1 Recipes
-        each r in recipe
+        div
+            h2 #{recipe.name}
+            h3 Instructions
+            ul
+                each instruction in recipe.instructions
+                    li= instruction
+            h3 Ingredients
+            ul
+                each ingredient in recipe.ingredients
+                    li= ingredient        
+        //each r in recipe
           div
               h2 #{r.name}
               h3 Instructions
