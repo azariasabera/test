@@ -12,14 +12,18 @@ module.exports = router;
 
 
 // Sample data for recipes
-const recipes = [];
+const recipes = [
+  {name: "Pasta",
+  instructions: ["Mix everything together","Put it in oven for 30 min","Mix everything together"],
+  ingredients: ["500g flour","2 chili","1tsp lemon juice"]}
+];
 // Define GET route for /recipe/:food
 router.get('/recipe/:food', (req, res) => {
   const name = req.params.food;
   const food = recipes.find(recipe => recipe.name === name);
   if (food) {
-    // res.json(food);
-    res.send('Recipe found');
+    res.json(food);
+    // res.send('Recipe found');
   }
   else {
     const defaultResponse = {
@@ -27,7 +31,7 @@ router.get('/recipe/:food', (req, res) => {
       instructions: "Default instructions",
       ingredients: ["Default ingredients"]
     };
-    // res.json(defaultResponse);
-    res.send('Recipe not found');
+    res.json(defaultResponse);
+    // res.send('Recipe not found');
   }
 });
