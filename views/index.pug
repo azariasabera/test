@@ -2,6 +2,8 @@ doctype html
 html
     head
         title Recipe App
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src="/javascripts/script.js", defer)
     body
         h1 Recipes
         each r in recipe
@@ -15,3 +17,4 @@ html
               ul
                   each ingredient in r.ingredients
                       li= ingredient
+        div#recipe

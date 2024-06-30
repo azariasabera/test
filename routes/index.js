@@ -15,6 +15,10 @@ module.exports = router;
 const recipes = [
   {name: "Pasta",
   instructions: ["Mix everything together","Put it in oven for 30 min","Mix everything together"],
+  ingredients: ["500g flour","2 chili","1tsp lemon juice"]},
+
+  {name: "Pizza",
+  instructions: ["Mix everything together","Put it in oven for 30 min","Mix everything together"],
   ingredients: ["500g flour","2 chili","1tsp lemon juice"]}
 ];
 // Define GET route for /recipe/:food
