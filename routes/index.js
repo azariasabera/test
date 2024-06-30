@@ -18,7 +18,8 @@ router.get('/recipe/:food', (req, res) => {
   const name = req.params.food;
   const food = recipes.find(recipe => recipe.name === name);
   if (food) {
-    res.json(food);
+    // res.json(food);
+    res.send('Recipe found');
   }
   else {
     const defaultResponse = {
@@ -26,6 +27,7 @@ router.get('/recipe/:food', (req, res) => {
       instructions: "Default instructions",
       ingredients: ["Default ingredients"]
     };
-    res.json(defaultResponse);
+    // res.json(defaultResponse);
+    res.send('Recipe not found');
   }
 });
